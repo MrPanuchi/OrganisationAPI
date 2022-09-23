@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "3RHJUv+dKdobfbNLEOV6dPEn5UaKWQdImdeH+3rEOxs=",
+  "Hash": "HUOglcsA6EInxDB5IelBx1rHm4ywahM6MFSP3uoAKLs=",
   "Source": "OrganisationAPI",
   "BasePath": "_content/OrganisationAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "OrganisationAPI\\wwwroot",
+      "Source": "OrganisationAPI",
+      "ContentRoot": "C:\\Users\\Tony\\source\\repos\\OrganisationAPI\\OrganisationAPI\\wwwroot\\",
+      "BasePath": "_content/OrganisationAPI",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }

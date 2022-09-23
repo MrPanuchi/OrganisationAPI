@@ -56,3 +56,4 @@ C:\Users\Tony\source\repos\OrganisationAPI\OrganisationAPI\bin\Debug\net6.0\Huma
 C:\Users\Tony\source\repos\OrganisationAPI\OrganisationAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Tony\source\repos\OrganisationAPI\OrganisationAPI\obj\Debug\net6.0\Interop.Microsoft.Office.Interop.Excel.dll
 C:\Users\Tony\source\repos\OrganisationAPI\OrganisationAPI\obj\Debug\net6.0\OrganisationAPI.csproj.ResolveComReference.cache
+C:\Users\Tony\source\repos\OrganisationAPI\OrganisationAPI\bin\Debug\net6.0\OrganisationAPI.staticwebassets.runtime.json

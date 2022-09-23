@@ -8,9 +8,16 @@ namespace OrganisationAPI.Services
 {
     public class XLSXParserService : Interfaces.IXLSXParser
     {
+        private readonly IWebHostEnvironment _appEnvironment;
+
+        public XLSXParserService(IWebHostEnvironment appEnvironment)
+        {
+            _appEnvironment = appEnvironment;
+        }
+
         public string[][] ParseXLSXToCSV(IFormFile file)
         {
-            string xlsxFilePath = file.FileName;
+            string xlsxFilePath = _appEnvironment.WebRootPath + "\\" + file.FileName;
             string csvFilePath = xlsxFilePath.Substring(0, xlsxFilePath.Length - 5) + ".csv";
 
             DownloadFile(file, xlsxFilePath);
@@ -30,13 +37,12 @@ namespace OrganisationAPI.Services
         private void ConvertXLSXToCSV(string xlsxFilePath, string csvFilePath)
         {
             Excel.Application app = new Excel.Application();
-            string path = AppDomain.CurrentDomain.BaseDirectory.Substring(0,AppDomain.CurrentDomain.BaseDirectory.Length-17); //TODO не лучшее решение, знаю что существует WWWROOT, но он вроде как не для этого
-            Excel.Workbook workbook = app.Workbooks.Open(path + xlsxFilePath);
-            if (File.Exists(path + csvFilePath))
+            Excel.Workbook workbook = app.Workbooks.Open(xlsxFilePath);
+            if (File.Exists(csvFilePath))
             {
-                File.Delete(path + csvFilePath);
+                File.Delete(csvFilePath);
             }
-            workbook.SaveAs(path + csvFilePath, Excel.XlFileFormat.xlCSVUTF8);
+            workbook.SaveAs(csvFilePath, Excel.XlFileFormat.xlCSVUTF8);
             workbook.Close();
         }
         private string CSVToString(string csvFilePath)
